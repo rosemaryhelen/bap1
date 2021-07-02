@@ -48,25 +48,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\adamb\\.nuget\\packages\\": {},
+    "C:\\Users\\rhbog\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\adamb\\Source\\Repos\\bap1Blazor\\BapBlazor.csproj",
+      "projectUniqueName": "C:\\Users\\rhbog\\Source\\Repos\\blazor\\BapBlazor.csproj",
       "projectName": "BapBlazor",
-      "projectPath": "C:\\Users\\adamb\\Source\\Repos\\bap1Blazor\\BapBlazor.csproj",
-      "packagesPath": "C:\\Users\\adamb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\adamb\\Source\\Repos\\bap1Blazor\\obj\\",
+      "projectPath": "C:\\Users\\rhbog\\Source\\Repos\\blazor\\BapBlazor.csproj",
+      "packagesPath": "C:\\Users\\rhbog\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rhbog\\Source\\Repos\\blazor\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\adamb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rhbog\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -117,7 +117,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
