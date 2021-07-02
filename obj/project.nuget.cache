@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "162T/K6MHkjQfQexaGHueZsvBJzGNINT/Guf/u2C5DoNggyA7qkZmkeKFkE/A0j0C1/yBJdljijdYNeW3PAq0Q==",
+  "dgSpecHash": "wqFaKFA9Wws0G8A23aEP+FMnJnKVn3JmTaC+m5Femu68XR6/nBGTWSH2Yo7h1QHz4Yjyl2sNDoaTdfXdxtRSww==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rhbog\\source\\repos\\blazor\\BapBlazor.csproj",
+  "projectFilePath": "C:\\Users\\Student\\source\\repos\\blazor\\BapBlazor.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\rhbog\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\Student\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }
