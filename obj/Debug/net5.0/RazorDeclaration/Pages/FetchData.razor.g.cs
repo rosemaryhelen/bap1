@@ -98,7 +98,7 @@ using BapBlazor.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 39 "C:\Users\Student\source\repos\blazor\Pages\FetchData.razor"
+#line 40 "C:\Users\Student\source\repos\blazor\Pages\FetchData.razor"
        
     private WeatherForecast[] forecasts;
 

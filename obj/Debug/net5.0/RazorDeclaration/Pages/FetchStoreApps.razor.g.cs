@@ -105,7 +105,7 @@ using Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 47 "C:\Users\Student\source\repos\blazor\Pages\FetchStoreApps.razor"
+#line 58 "C:\Users\Student\source\repos\blazor\Pages\FetchStoreApps.razor"
        
 
     string responseBody = "";

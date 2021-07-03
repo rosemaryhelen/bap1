@@ -1,6 +1,10 @@
 using System;
 using Newtonsoft.Json;
 
+
+
+
+
  public class StoreApp
     {
         [JsonProperty("id")]
