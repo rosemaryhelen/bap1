@@ -29,8 +29,8 @@ namespace BapBlazor
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
-            
+            services.AddSingleton<StoreApp>();
+
             services.AddScoped<HttpClient>(s =>
             {
                 // return new HttpClient { BaseAddress = new Uri(@"https://bapapisqlite.azurewebsites.net/") };

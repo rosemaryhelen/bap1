@@ -84,7 +84,7 @@ using BapBlazor.Shared;
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\Student\source\repos\blazor\Pages\FetchData.razor"
-using BapBlazor.Data;
+using Data;
 
 #line default
 #line hidden
@@ -97,20 +97,6 @@ using BapBlazor.Data;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 40 "C:\Users\Student\source\repos\blazor\Pages\FetchData.razor"
-       
-    private WeatherForecast[] forecasts;
-
-    protected override async Task OnInitializedAsync()
-    {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
-    }
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private WeatherForecastService ForecastService { get; set; }
     }
 }
 #pragma warning restore 1591
