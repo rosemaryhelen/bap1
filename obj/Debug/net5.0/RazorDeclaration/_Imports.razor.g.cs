@@ -13,70 +13,110 @@ namespace BapBlazor
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
+<<<<<<< HEAD
+#line 1 "C:\Users\Cheryl\Source\Repos\bap1\_Imports.razor"
+=======
 #line 1 "C:\Users\Student\source\repos\blazor\_Imports.razor"
+>>>>>>> eccb0c243f596e1fab5e18ae19e87cc0b76dc044
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD
+#line 2 "C:\Users\Cheryl\Source\Repos\bap1\_Imports.razor"
+=======
 #line 2 "C:\Users\Student\source\repos\blazor\_Imports.razor"
+>>>>>>> eccb0c243f596e1fab5e18ae19e87cc0b76dc044
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD
+#line 3 "C:\Users\Cheryl\Source\Repos\bap1\_Imports.razor"
+=======
 #line 3 "C:\Users\Student\source\repos\blazor\_Imports.razor"
+>>>>>>> eccb0c243f596e1fab5e18ae19e87cc0b76dc044
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD
+#line 4 "C:\Users\Cheryl\Source\Repos\bap1\_Imports.razor"
+=======
 #line 4 "C:\Users\Student\source\repos\blazor\_Imports.razor"
+>>>>>>> eccb0c243f596e1fab5e18ae19e87cc0b76dc044
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD
+#line 5 "C:\Users\Cheryl\Source\Repos\bap1\_Imports.razor"
+=======
 #line 5 "C:\Users\Student\source\repos\blazor\_Imports.razor"
+>>>>>>> eccb0c243f596e1fab5e18ae19e87cc0b76dc044
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD
+#line 6 "C:\Users\Cheryl\Source\Repos\bap1\_Imports.razor"
+=======
 #line 6 "C:\Users\Student\source\repos\blazor\_Imports.razor"
+>>>>>>> eccb0c243f596e1fab5e18ae19e87cc0b76dc044
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD
+#line 7 "C:\Users\Cheryl\Source\Repos\bap1\_Imports.razor"
+=======
 #line 7 "C:\Users\Student\source\repos\blazor\_Imports.razor"
+>>>>>>> eccb0c243f596e1fab5e18ae19e87cc0b76dc044
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD
+#line 8 "C:\Users\Cheryl\Source\Repos\bap1\_Imports.razor"
+=======
 #line 8 "C:\Users\Student\source\repos\blazor\_Imports.razor"
+>>>>>>> eccb0c243f596e1fab5e18ae19e87cc0b76dc044
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD
+#line 9 "C:\Users\Cheryl\Source\Repos\bap1\_Imports.razor"
+=======
 #line 9 "C:\Users\Student\source\repos\blazor\_Imports.razor"
+>>>>>>> eccb0c243f596e1fab5e18ae19e87cc0b76dc044
 using BapBlazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD
+#line 10 "C:\Users\Cheryl\Source\Repos\bap1\_Imports.razor"
+=======
 #line 10 "C:\Users\Student\source\repos\blazor\_Imports.razor"
+>>>>>>> eccb0c243f596e1fab5e18ae19e87cc0b76dc044
 using BapBlazor.Shared;
 
 #line default
