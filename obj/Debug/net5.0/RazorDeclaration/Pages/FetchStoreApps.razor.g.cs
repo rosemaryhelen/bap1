@@ -83,14 +83,14 @@ using System.Net.Http;
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Student\source\repos\blazor\Pages\FetchStoreApps.razor"
+#line 9 "C:\Users\Student\source\repos\blazor\Pages\FetchStoreApps.razor"
 using Newtonsoft.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\Student\source\repos\blazor\Pages\FetchStoreApps.razor"
+#line 10 "C:\Users\Student\source\repos\blazor\Pages\FetchStoreApps.razor"
 using Data;
 
 #line default
@@ -105,7 +105,7 @@ using Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 58 "C:\Users\Student\source\repos\blazor\Pages\FetchStoreApps.razor"
+#line 63 "C:\Users\Student\source\repos\blazor\Pages\FetchStoreApps.razor"
        
 
     string responseBody = "";
