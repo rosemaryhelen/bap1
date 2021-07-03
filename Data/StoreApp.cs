@@ -2,7 +2,7 @@ using System;
 using Newtonsoft.Json;
 
 
- public class StoreApp
+    public class StoreApp
     {
         [JsonProperty("id")]
         public int Id { get; set; }
@@ -24,6 +24,5 @@ using Newtonsoft.Json;
 
         [JsonProperty("price")]
         public int Price { get; set; }
-
-
+    
 }
