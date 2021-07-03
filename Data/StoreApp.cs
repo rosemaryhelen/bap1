@@ -2,9 +2,6 @@ using System;
 using Newtonsoft.Json;
 
 
-
-
-
  public class StoreApp
     {
         [JsonProperty("id")]
@@ -12,10 +9,10 @@ using Newtonsoft.Json;
 
         [JsonProperty("name")]
         public string Name { get; set; }
-        
+
         [JsonProperty("rating")]
         public string Rating { get; set; }
-        
+
         [JsonProperty("people")]
         public string People { get; set; }
 

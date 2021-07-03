@@ -3,15 +3,17 @@
 @using System.Net.Http
 
 @inject HttpClient client
-@inject StoreApp 
+   
+
 
 @using Newtonsoft.Json
 @using Data
 
-<div class="container-fluid">
+<div class="container-fluid" style="background-color:cornsilk">
 
     <div class="row justify-content-center" style="margin-bottom:50px">
-        <h3 class="text-center" color:"MediumSeaGreen">Store Apps - Complete Data</h3>
+        <h3 class="text-center" style="color:cornflowerblue"><img src="MSLOGO.jpg" class="w3-round" alt="MS Logo">Microsoft Store Apps:<br />App Data</h3>
+       
     </div>
 
     <div class="row" style="margin:25px;">
@@ -33,6 +35,7 @@
                 <tbody>
                     @foreach (var storeapp in StoreApps)
                     {
+                    
                         <tr class="justify-content-center">
                             <td>@storeapp.Id</td>
                             <td>@storeapp.Name</td>
@@ -47,7 +50,7 @@
                 </tbody>
             </table>
         }
-        @if (!StoreApps.Any())
+       @if (!StoreApps.Any())
         {
             <div class="justify-content-center">
                 <h5>No records to show</h5>
