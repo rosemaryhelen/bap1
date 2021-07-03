@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Cheryl\\source\\repos\\bap1\\BapBlazor.csproj": {}
   },
   "projects": {
@@ -12,16 +13,30 @@
         "projectPath": "C:\\Users\\Cheryl\\source\\repos\\bap1\\BapBlazor.csproj",
         "packagesPath": "C:\\Users\\Cheryl\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Cheryl\\source\\repos\\bap1\\obj\\",
+=======
+    "C:\\Users\\Student\\source\\repos\\blazor\\BapBlazor.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Student\\source\\repos\\blazor\\BapBlazor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Student\\source\\repos\\blazor\\BapBlazor.csproj",
+        "projectName": "BapBlazor",
+        "projectPath": "C:\\Users\\Student\\source\\repos\\blazor\\BapBlazor.csproj",
+        "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Student\\source\\repos\\blazor\\obj\\",
+>>>>>>> eccb0c243f596e1fab5e18ae19e87cc0b76dc044
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\Cheryl\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+=======
+          "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> eccb0c243f596e1fab5e18ae19e87cc0b76dc044
         ],
         "originalTargetFrameworks": [
           "net5.0"
