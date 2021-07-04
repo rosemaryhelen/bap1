@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using BapBlazor.Data;
+using Syncfusion.Blazor;
 
 namespace BapBlazor
 {
@@ -30,6 +31,11 @@ namespace BapBlazor
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<StoreApp>();
+            services.AddSyncfusionBlazor();
+            services.AddSignalR(e =>
+            {
+                e.MaximumReceiveMessageSize = 65536;
+            });
 
             services.AddScoped<HttpClient>(s =>
             {
