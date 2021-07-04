@@ -20,9 +20,9 @@ using Newtonsoft.Json;
         public String Category { get; set; }
 
         [JsonProperty("date")]
-        public int Date { get; set; }
+        public string Date { get; set; }
 
         [JsonProperty("price")]
-        public int Price { get; set; }
+        public string Price { get; set; }
     
 }
