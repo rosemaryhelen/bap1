@@ -13,98 +13,98 @@ namespace BapBlazor.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 2 "C:\Users\adamb\Source\Repos\BAP\Blazor\_Imports.razor"
+#line 2 "C:\Users\Student\source\repos\BAP Team 03\bap1\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\adamb\Source\Repos\BAP\Blazor\_Imports.razor"
+#line 3 "C:\Users\Student\source\repos\BAP Team 03\bap1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\adamb\Source\Repos\BAP\Blazor\_Imports.razor"
+#line 4 "C:\Users\Student\source\repos\BAP Team 03\bap1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\adamb\Source\Repos\BAP\Blazor\_Imports.razor"
+#line 5 "C:\Users\Student\source\repos\BAP Team 03\bap1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\adamb\Source\Repos\BAP\Blazor\_Imports.razor"
+#line 6 "C:\Users\Student\source\repos\BAP Team 03\bap1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\adamb\Source\Repos\BAP\Blazor\_Imports.razor"
+#line 7 "C:\Users\Student\source\repos\BAP Team 03\bap1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\adamb\Source\Repos\BAP\Blazor\_Imports.razor"
+#line 8 "C:\Users\Student\source\repos\BAP Team 03\bap1\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\adamb\Source\Repos\BAP\Blazor\_Imports.razor"
+#line 9 "C:\Users\Student\source\repos\BAP Team 03\bap1\_Imports.razor"
 using BapBlazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\adamb\Source\Repos\BAP\Blazor\_Imports.razor"
+#line 10 "C:\Users\Student\source\repos\BAP Team 03\bap1\_Imports.razor"
 using BapBlazor.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\adamb\Source\Repos\BAP\Blazor\_Imports.razor"
+#line 11 "C:\Users\Student\source\repos\BAP Team 03\bap1\_Imports.razor"
 using Syncfusion.Blazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\adamb\Source\Repos\BAP\Blazor\_Imports.razor"
+#line 12 "C:\Users\Student\source\repos\BAP Team 03\bap1\_Imports.razor"
 using Syncfusion.Blazor.Charts;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\adamb\Source\Repos\BAP\Blazor\Pages\Sort.razor"
+#line 2 "C:\Users\Student\source\repos\BAP Team 03\bap1\Pages\Sort.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\adamb\Source\Repos\BAP\Blazor\Pages\Sort.razor"
+#line 6 "C:\Users\Student\source\repos\BAP Team 03\bap1\Pages\Sort.razor"
 using Newtonsoft.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\adamb\Source\Repos\BAP\Blazor\Pages\Sort.razor"
+#line 7 "C:\Users\Student\source\repos\BAP Team 03\bap1\Pages\Sort.razor"
 using Data;
 
 #line default
@@ -118,6 +118,118 @@ using Data;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 92 "C:\Users\Student\source\repos\BAP Team 03\bap1\Pages\Sort.razor"
+       
+
+    string responseBody = "";
+    List<StoreApp> StoreApps = new List<StoreApp>();
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var apiName = "api/StoreApps";
+        var httpResponse = await client.GetAsync(apiName);
+
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            responseBody = await httpResponse.Content.ReadAsStringAsync();
+            StoreApps = JsonConvert.DeserializeObject<List<StoreApp>>(responseBody);
+            StateHasChanged();
+        }
+
+    }
+
+    //methods to sort by app ID number in both ascending and descending order
+    public void SortTableByIdAsc()
+    {
+
+        StoreApps.Sort((x, y) => x.Id.CompareTo(y.Id));
+    }
+    public void SortTableByIdDesc()
+    {
+
+        StoreApps.Sort((x, y) => y.Id.CompareTo(x.Id));
+
+
+        //methods to sort by app Name in both ascending and descending order
+    }
+    public void SortTableByNameAsc()
+    {
+        StoreApps.Sort((x, y) => x.Name.CompareTo(y.Name));
+
+    }
+    public void SortTableByNameDesc()
+    {
+
+        StoreApps.Sort((x, y) => y.Name.CompareTo(x.Name));
+    }
+
+    //methods to sort by Rating in both ascending and descending order
+    public void SortTableByRatingAsc()
+    {
+        StoreApps.Sort((x, y) => x.Rating.CompareTo(y.Rating));
+
+    }
+    public void SortTableByRatingDesc()
+    {
+
+        StoreApps.Sort((x, y) => y.Rating.CompareTo(x.Rating));
+    }
+
+    //methods to sort by amount of People that rated in both ascending and descending order
+    public void SortTableByPeopleAsc()
+    {
+        StoreApps.Sort((x, y) => x.People.CompareTo(y.People));
+
+    }
+    public void SortTableByPeopleDesc()
+    {
+
+        StoreApps.Sort((x, y) => y.People.CompareTo(x.People));
+    }
+
+    //methods to sort by app Category in both ascending and descending order
+    public void SortTableByCategoryAsc()
+    {
+        StoreApps.Sort((x, y) => x.Category.CompareTo(y.Category));
+
+    }
+    public void SortTableByCategoryDesc()
+    {
+
+        StoreApps.Sort((x, y) => y.Category.CompareTo(x.Category));
+    }
+
+    //methods to sort by Date app was registered in both ascending and descending order
+    public void SortTableByDateAsc()
+    {
+        StoreApps.Sort((x, y) => x.Date.CompareTo(y.Date));
+
+    }
+    public void SortTableByDateDesc()
+    {
+
+        StoreApps.Sort((x, y) => y.Date.CompareTo(x.Date));
+    }
+
+    //methods to sort by Price of each app in both ascending and descending order
+    public void SortTableByPriceAsc()
+    {
+        StoreApps.Sort((x, y) => x.Price.CompareTo(y.Price));
+
+    }
+    public void SortTableByPriceDesc()
+    {
+
+        StoreApps.Sort((x, y) => y.Price.CompareTo(x.Price));
+    }
+
+
+#line default
+#line hidden
+#nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient client { get; set; }
     }
 }
