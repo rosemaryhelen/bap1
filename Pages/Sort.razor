@@ -6,23 +6,14 @@
 @using Newtonsoft.Json
 @using Data
 
-@*<h1>Sort</h1>
+<h1 class="text-center" >Store Apps Sort</h1>
 
-    <p>This component demonstrates sorting the dataset.</p>
-
-    <p>One way to tackle this problem;</p>
-    <ul>
-        <li>Start with pretty much the same code as FetchStoreApps.razor.</li>
-        <li>Turn your table headers into hyperlinks.</li>
-        <li>When you click on the table header use a method to sort your list accordingly.</li>
-        <li>StoreApps is not a simple list, it is a list of objects.</li>
-        <li>You will need to search on, "sorting a list by object property"</li>
-    </ul>*@
+    <p class = "text-center"><em> This page allows for the sorting of the store apps data by property in ascending and descending order</em></p>
 
 <div class="container-fluid">
 
     <div class="row justify-content-center" style="margin-bottom:50px">
-        <h3 class="text-center">Store Apps - Sorted by Value</h3>
+       
     </div>
 
     <div class="row" style="margin:25px;">
@@ -33,32 +24,32 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>
-                            <a href="javascript://" @onclick="@SortTableByIdAsc">Id Ascending ||</a>
-                            <a href="javascript://" @onclick="@SortTableByIdDesc">Id Descending</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByIdAsc">Id Ascending ||</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByIdDesc">Id Descending</a>
                         </th>
                         <th>
-                            <a href="javascript://" @onclick="@SortTableByNameAsc">Name Ascending || </a>
-                            <a href="javascript://" @onclick="@SortTableByNameDesc">Name Descending</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByNameAsc">Name Ascending || </a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByNameDesc">Name Descending</a>
                         </th>
                         <th>
-                            <a href="javascript://" @onclick="@SortTableByRatingAsc">Rating Ascending || </a>
-                            <a href="javascript://" @onclick="@SortTableByRatingDesc">Rating Descending</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByRatingAsc">Rating Ascending || </a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByRatingDesc">Rating Descending</a>
                         </th>
                         <th>
-                            <a href="javascript://" @onclick="@SortTableByPeopleAsc">People Ascending || </a>
-                            <a href="javascript://" @onclick="@SortTableByPeopleDesc">People Descending</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByPeopleAsc">People Ascending || </a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByPeopleDesc">People Descending</a>
                         </th>
                         <th>
-                            <a href="javascript://" @onclick="@SortTableByCategoryAsc">Category Ascending || </a>
-                            <a href="javascript://" @onclick="@SortTableByCategoryDesc">Category Descending</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByCategoryAsc">Category Ascending || </a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByCategoryDesc">Category Descending</a>
                         </th>
                         <th>
-                            <a href="javascript://" @onclick="@SortTableByDateAsc">Date Ascending ||</a>
-                            <a href="javascript://" @onclick="@SortTableByDateDesc">Date Descending</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByDateAsc">Date Ascending ||</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByDateDesc">Date Descending</a>
                         </th>
                         <th>
-                            <a href="javascript://" @onclick="@SortTableByPriceAsc">Price Ascending ||</a>
-                            <a href="javascript://" @onclick="@SortTableByPriceDesc">Price Descending</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByPriceAsc">Price Ascending ||</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByPriceDesc">Price Descending</a>
                         </th>
                     </tr>
                 </thead>

@@ -6,14 +6,20 @@
 @using Syncfusion.Blazor.Data 
 @using BapBlazor.Data
 @using Newtonsoft.Json 
+ 
 
 
 @inject HttpClient client
+@inject NavigationManager NavManager
+
+<h1>Chart Number 1</h1>
+
 
 <SfChart Title="Number of app downloads in each category">
     
-    <ChartPrimaryXAxis Title="Category" ValueType="Syncfusion.Blazor.Charts.ValueType.Category" />
-    <ChartPrimaryYAxis Title="Number of People" />
+    <ChartPrimaryXAxis Title="Category" ValueType="Syncfusion.Blazor.Charts.ValueType.Category"  />
+    <ChartPrimaryYAxis Title="Number of People" RangePadding="ChartRangePadding.Round"/>
+    <ChartTooltipSettings Enable="true" />
     <ChartSeriesCollection>
         <ChartSeries DataSource="@StoreApps" XName="Category" YName="People" Type="ChartSeriesType.Column">
         
@@ -21,11 +27,16 @@
     </ChartSeriesCollection>
 </SfChart>
 
+<button type="button" class="btn btn-primary" @onclick="@Navigate">Next Chart</button>
+
+
+
+
 @code {
 
 
-        string responseBody = "";
-        List<StoreApp> StoreApps = new List<StoreApp>();
+    string responseBody = "";
+    List<StoreApp> StoreApps = new List<StoreApp>();
 
     protected override async Task OnInitializedAsync()
     {
@@ -41,9 +52,14 @@
 
     }
 
-    
+    protected void Navigate()
+    {
+        NavManager.NavigateTo("charts2");
+    }
 
-  
+
+
+
 
 }
 
