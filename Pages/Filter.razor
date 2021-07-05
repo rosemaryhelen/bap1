@@ -1,7 +1,129 @@
 ﻿@page "/filter"
 
-<h3>Filter</h3>
+@using System.Net.Http
+
+@inject HttpClient client
+
+@using Newtonsoft.Json
+@using Data
+
+@using Microsoft.Extensions.Logging
+@inject ILogger<Filter> Logger
+
+<div class="container-fluid">
+
+    <div class="row justify-content-center" style="margin-bottom:50px">
+        <h3 class="text-center">Store Apps - Sorted by Value</h3>
+    </div>
+
+    <div class="row" style="margin:25px;">
+
+        @if (StoreApps != null)
+        {
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                            Id
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Rating
+                        </th>
+                        <th>
+                            People
+                        </th>
+                        <th>
+                            Category
+                            <form>
+                                <select name="dropdown" @onsubmit="@HandleSubmit">
+                                    <option value=”Select”>Filter</option>
+                                    <option value=”Books”>Books</option>
+                                    <option value=”Business”>Business</option>
+                                    <option value=”DeveloperTools”>Developer Tools</option>
+                                    <option value=”Food&Dining”>Food And Dining</option>
+                                    <option value=”Government&Politics”>Government And Politics</option>
+                                    <option value=”Health&Fitness”>Health And Fitness</option>
+                                    <option value=”Kids&Family”>Kids And Family</option>
+                                    <option value=”Lifestlye”>Lifestyle</option>
+                                    <option value=”MultimediaDesign”>Multimedia Design</option>
+                                    <option value=”Music”>Music</option>
+                                    <option value=”Navigation&Maps”>Navigation And Maps</option>
+                                    <option value=”News&Weather”>News And Weather</option>
+                                    <option value=”Social”>Social</option>
+                                </select>
+                                <button type="submit" @onclick="@EnterUserInput">Filter</button>
+                            </form>
+                        </th>
+                        <th>
+                            Date
+                        </th>
+                        <th>
+                            >Price
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var storeapp in StoreApps)
+                    {
+                        <tr class="justify-content-center">
+                            <td>@storeapp.Id</td>
+                            <td>@storeapp.Name</td>
+                            <td>@storeapp.Rating</td>
+                            <td>@storeapp.People</td>
+                            <td>@storeapp.Category</td>
+                            <td>@storeapp.Date</td>
+                            <td>@storeapp.Price</td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        @if (!StoreApps.Any())
+        {
+            <div class="justify-content-center">
+                <h5>No records to show</h5>
+            </div>
+        }
+    </div>
+
+</div>
 
 @code {
+        public CategoryModel categoryModel = new();
+        List<StoreApp> StoreApps = new List<StoreApp>();
+
+        private void HandleSubmit()
+        {
+            Logger.LogInformation("HandleSubmit called");
+            Logger.LogInformation(categoryModel.CategoryName);
+
+        }
+
+        private async void EnterUserInput()
+        {
+            await GetFilter(categoryModel.CategoryName);
+        } 
+
+        string responseBody = "";
+
+        public async Task GetFilter(string filter)
+        {
+
+            var apiName = "api/StoreApps/category";
+            apiName += filter;
+            var httpResponse = await client.GetAsync(apiName);
+
+            if (httpResponse.IsSuccessStatusCode)
+            {
+                responseBody = await httpResponse.Content.ReadAsStringAsync();
+                StoreApps = JsonConvert.DeserializeObject<List<StoreApp>>(responseBody);
+                StateHasChanged();
+            }
+
+        }
 
 }
