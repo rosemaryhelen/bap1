@@ -595,3 +595,7 @@ C:\Users\Student\source\repos\New Team Repo\obj\Debug\net5.0\RazorDeclaration\Pa
 C:\Users\Student\source\repos\New Team Repo\obj\Debug\net5.0\Razor\Pages\Filter.razor.g.cs
 C:\Users\Student\source\repos\New Team Repo\obj\Debug\net5.0\RazorDeclaration\Pages\Recommendation.razor.g.cs
 C:\Users\Student\source\repos\New Team Repo\obj\Debug\net5.0\Razor\Pages\Recommendation.razor.g.cs
+C:\Users\Student\source\repos\New Team Repo\obj\Debug\net5.0\RazorDeclaration\Pages\Charts2.razor.g.cs
+C:\Users\Student\source\repos\New Team Repo\obj\Debug\net5.0\RazorDeclaration\Pages\Recommendation1.razor.g.cs
+C:\Users\Student\source\repos\New Team Repo\obj\Debug\net5.0\Razor\Pages\Charts2.razor.g.cs
+C:\Users\Student\source\repos\New Team Repo\obj\Debug\net5.0\Razor\Pages\Recommendation1.razor.g.cs

@@ -105,14 +105,15 @@ using Syncfusion.Blazor.Charts;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 9 "C:\Users\Student\source\repos\New Team Repo\Pages\Counter.razor"
-       
-    private int currentCount = 0;
+#line 16 "C:\Users\Student\source\repos\New Team Repo\Pages\Counter.razor"
+           
+        private int currentCount = 0;
 
-    private void IncrementCount()
-    {
-        currentCount++;
-    }
+        private void IncrementCount()
+        {
+            currentCount++;
+        }
+    
 
 #line default
 #line hidden
