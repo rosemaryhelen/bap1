@@ -10,14 +10,7 @@
 
 <p>This component demonstrates pagination of the databaset.</p>
 
-<p>One way to tackle this problem;</p>
-<ul>
-    <li>Start with pretty much the same code as FetchStoreApps.razor.</li>
-    <li>Add buttons to move between pages of records e.g. 25 records.</li>
-    <li>You could take inspiration from Counter.razor (increment and decrement a number).</li>
-    <li>You could use this number to control which items in your list are displayed.</li>
-    <li>Problems to solve are not going beyond the end of your list and decrementing less than zero.</li>
-</ul>
+
 
 <button class="btn btn-primary" @onclick="Previous"> Previous </button> &nbsp; <button class="btn btn-primary" @onclick="Next"> Next </button>
 
@@ -74,8 +67,8 @@
 
 @code {
 
-    string responseBody = "";
-    List<StoreApp> StoreApps = new List<StoreApp>();
+        string responseBody = "";
+        List<StoreApp> StoreApps = new List<StoreApp>();
 
     protected override async Task OnInitializedAsync()
     {
@@ -90,19 +83,41 @@
         }
 
     }
+
+    //Declare Variables
+
     private int pageStart = 0;
     private int pageEnd = 25;
     private int pageSize = 25;
+    const int basePage = 0;
+
+    //Method to proceed to next page 
     private void Next()
     {
-        pageStart += pageSize;
-        pageEnd += pageSize;
-    }
+        if (pageStart <= pageEnd)
+        {
+            pageStart += pageSize;
+            pageEnd += pageSize;
+        }//if
+        else
+        {
+            Console.WriteLine("You have reached the end of the dataset");
+        }//else
+    }//Next()
+
+    //Method to return to previous page
     private void Previous()
     {
-        pageStart -= pageSize;
-        pageEnd -= pageSize;
+        if (pageStart >= basePage)
+        {
+            pageStart -= pageSize;
+            pageEnd -= pageSize;
 
-    }
+        }//if
+        else
+            {
+                Console.WriteLine("You have reached the end of the dataset");
+            }
+    }//Previous()
 
 }
