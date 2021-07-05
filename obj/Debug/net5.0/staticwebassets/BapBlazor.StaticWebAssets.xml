@@ -1,9 +1,4 @@
 ﻿<StaticWebAssets Version="1.0">
-<<<<<<< HEAD
-  <ContentRoot BasePath="/" Path="C:\Users\rhbog\Source\Repos\rosemaryhelen\bap1\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="/" Path="C:\Users\rhbog\Source\Repos\bap1\obj\Debug\net5.0\scopedcss\bundle\" />
   <ContentRoot BasePath="_content/Syncfusion.Blazor" Path="C:\Users\rhbog\.nuget\packages\syncfusion.blazor\19.2.0.44\build\..\staticwebassets\" />
-=======
-  <ContentRoot BasePath="/" Path="C:\Users\Student\source\repos\BAP Team 03\bap1\obj\Debug\net5.0\scopedcss\bundle\" />
-  <ContentRoot BasePath="_content/Syncfusion.Blazor" Path="C:\Users\Student\.nuget\packages\syncfusion.blazor\19.2.0.44\build\..\staticwebassets\" />
->>>>>>> 918e7e7d0a87b2e6c6e8dd4c29332569aa4c28ef
 </StaticWebAssets>
