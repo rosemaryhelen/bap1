@@ -139,8 +139,8 @@ using Data;
 
     }
     private int pageStart = 0;
-    private int pageEnd = 1000;
-    private int pageSize = 1000;
+    private int pageEnd = 25;
+    private int pageSize = 25;
     private void Next()
     {
         pageStart += pageSize;
