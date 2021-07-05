@@ -37,7 +37,7 @@
                         </th>
                         <th>
                             Category
-                            <EditForm Model="@categoryModel">
+                                @*Dropdown menu with the selection binded*@ 
                                 <select Id="CategoryList" class="form-control" @bind=@categoryModel.CategoryName>
                                     <option value=”Select”>Filter</option>
                                     <option value=”Books”>Books</option>
@@ -54,12 +54,13 @@
                                     <option value=”News&Weather”>News And Weather</option>
                                     <option value=”Social”>Social</option>
                                 </select>
-
-                                <button type="submit" @onclick="@EnterUserInput">Search</button>
-
+                                
+                                @*button that executes method when clicked*@
+                                <button type="submit" @onclick="@EnterUserInput">Filter</button>
+                                
+                                @*Confirms correct selection and ensures that bind has been populated with selection*@
                                 <p>Selected category is: @categoryModel.CategoryName</p>
 
-                            </EditForm>
                         </th>
                         <th>
                             Date
@@ -97,32 +98,46 @@
 </div>
 
 @code {
+
+    //new obj of CategoryModel
     public CategoryModel categoryModel = new();
+
+    //List to store apps that API returns
     public List<StoreApp> StoreApps = new List<StoreApp>();
 
+    //method to handle user selection - calls GetFilter() method with binded value from dropdown menu selection
     private async void EnterUserInput()
     {
         await GetFilter(categoryModel.CategoryName);
+        //await GetFilter(categoryModel.CategoryName.Replace('"', '');
     }
 
-    string responseBody = "";
-
-    //api/StoreApps/category/Business
+    //api/StoreApps/category/Business <-- target apiName
 
     public async Task GetFilter(string selection)
     {
-
+        //apiName returning as "api/StoreApps/category/"Business"" - need to remove quotes from "Business"
         var apiName = "api/StoreApps/category/" + selection.Substring(1, selection.Length - 2);
-        //apiName += selection;
+        //apiName += selection.Replace('"', '');
+        //apiName += selection.Replace("\"", "");
         //apiName += selection.Trim('"');
 
+        //Logger to check apiName is correct in output while debugging
         Logger.LogInformation(apiName);
+
+        //use Http client to give API a GET request using the apiName to call correct HttpGet method 
         var httpResponse = await client.GetAsync(apiName);
+
+        //for storing the returned data from GET method
+        string responseBody = "";
 
         if (httpResponse.IsSuccessStatusCode)
         {
+            //if status 200, read the content of the GET method and store as a string in responseBody
             responseBody = await httpResponse.Content.ReadAsStringAsync();
+            //populate the StoreApps list with the content of from the response body
             StoreApps = JsonConvert.DeserializeObject<List<StoreApp>>(responseBody);
+            //re-renders state so that another action can be performed 
             StateHasChanged();
         }
 
