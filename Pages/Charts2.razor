@@ -1,8 +1,9 @@
-@page "/charts"
+@page "/charts2"
 @using System.Net.Http
 @using System.Net.Http.Json
 @using System.Threading.Tasks 
 @using Syncfusion.Blazor.Charts
+
 @using Syncfusion.Blazor.Data 
 @using BapBlazor.Data
 @using Newtonsoft.Json 
@@ -12,20 +13,16 @@
 @inject HttpClient client
 @inject NavigationManager NavManager
 
-<h1>Chart Number 1</h1>
+<h1>Chart Number 2</h1>
+
+<SfAccumulationChart Title="Pie Chart showing the number of different prices and apps">
+    <AccumulationChartSeriesCollection>
+        <AccumulationChartSeries DataSource="@StoreApps" XName="Rating" YName="People"> </AccumulationChartSeries>
+    </AccumulationChartSeriesCollection>
+</SfAccumulationChart>
 
 
-<SfChart Title="Number of app downloads in each category">
-    
-    <ChartPrimaryXAxis Title="Category" ValueType="Syncfusion.Blazor.Charts.ValueType.Category"  />
-    <ChartPrimaryYAxis Title="Number of People" RangePadding="ChartRangePadding.Round"/>
-    <ChartTooltipSettings Enable="true" />
-    <ChartSeriesCollection>
-        <ChartSeries DataSource="@StoreApps" XName="Category" YName="People" Type="ChartSeriesType.Column">
-        
-        </ChartSeries>
-    </ChartSeriesCollection>
-</SfChart>
+
 
 <button type="button" class="btn btn-primary" @onclick="@Navigate">Next Chart</button>
 
@@ -54,7 +51,7 @@
 
     protected void Navigate()
     {
-        NavManager.NavigateTo("charts2");
+        NavManager.NavigateTo("chart2");
     }
 
 
