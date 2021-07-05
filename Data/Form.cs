@@ -7,6 +7,12 @@ public class SearchModel
     public string Name { get; set; }
 }
 
+public class CategoryModel
+{
+    [Required]
+    public string CategoryName { get; set; }
+}
+
 public class AddModel
 {
     [Required]
