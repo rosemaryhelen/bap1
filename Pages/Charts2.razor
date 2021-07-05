@@ -1,21 +1,27 @@
 @page "/charts2"
 @using System.Net.Http
 @using System.Net.Http.Json
-@using System.Threading.Tasks 
+@using System.Threading.Tasks
 @using Syncfusion.Blazor.Charts
 
-@using Syncfusion.Blazor.Data 
+@using Syncfusion.Blazor.Data
 @using BapBlazor.Data
-@using Newtonsoft.Json 
- 
+@using Newtonsoft.Json
+
 
 
 @inject HttpClient client
 @inject NavigationManager NavManager
 
-<h1>Chart Number 2</h1>
+<div class="row justify-content-center">
+    <h1>Charts Showing Data Analysis Trends</h1>
+</div>
 
-<SfAccumulationChart Title="Pie Chart showing the number of different prices and apps">
+<div class="row justify-content-center">
+    <h2>Chart Number 2</h2>
+</div>
+
+<SfAccumulationChart Title="Pie Chart showing the number of Ratings">
     <AccumulationChartSeriesCollection>
         <AccumulationChartSeries DataSource="@StoreApps" XName="Rating" YName="People"> </AccumulationChartSeries>
     </AccumulationChartSeriesCollection>

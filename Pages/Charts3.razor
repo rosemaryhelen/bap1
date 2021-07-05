@@ -1,40 +1,44 @@
-@page "/charts"
+@page "/charts3"
 @using System.Net.Http
 @using System.Net.Http.Json
-@using System.Threading.Tasks 
+@using System.Threading.Tasks
 @using Syncfusion.Blazor.Charts
-@using Syncfusion.Blazor.Data 
+
+@using Syncfusion.Blazor.Data
 @using BapBlazor.Data
-@using Newtonsoft.Json 
- 
+@using Newtonsoft.Json
+
 
 
 @inject HttpClient client
 @inject NavigationManager NavManager
 
 <div class="row justify-content-center">
-<h1>Charts Showing Data Analysis Trends</h1>
+    <h1>Charts Showing Data Analysis Trends</h1>
 </div>
 
 <div class="row justify-content-center">
-<h2>Chart Number 1</h2>
+    <h2>Chart Number 3</h2>
 </div>
- 
 
+<SfChart Title="Number of Downloads for each Category">
 
-<SfChart Title="Chart showing Number of Downloads in First 10 Apps">
-    
-    <ChartPrimaryXAxis Title="Category" ValueType="Syncfusion.Blazor.Charts.ValueType.Category" Maximum="10" Minimum="1" Interval="1"/>
-    <ChartPrimaryYAxis Title="Number of People" RangePadding="ChartRangePadding.Normal" Minimum="500" Maximum="800"/>
+    <ChartPrimaryXAxis Title="Category" ValueType="Syncfusion.Blazor.Charts.ValueType.Category" />
+    <ChartPrimaryYAxis Title="Number of People" RangePadding="ChartRangePadding.Round" Minimum="500" Maximum="1000" />
     <ChartTooltipSettings Enable="true" />
     <ChartSeriesCollection>
-        <ChartSeries DataSource="@StoreApps" XName="Name" YName="People" Type="ChartSeriesType.Column">
-        
+        <ChartSeries DataSource="@StoreApps" XName="Category" YName="People" Type="ChartSeriesType.Column">
+
         </ChartSeries>
     </ChartSeriesCollection>
 </SfChart>
 
-<button type="button" class="btn btn-primary" @onclick="@Navigate">Next Chart</button>
+
+
+<div class="justify-content-center">
+
+    <button type="button" class="btn btn-primary" @onclick="@NavigatePrevious">Previous Chart</button>
+</div>
 
 
 
@@ -59,9 +63,14 @@
 
     }
 
-    protected void Navigate()
+    //protected void NavigateNext()
+    //{
+    //    NavManager.NavigateTo("charts3");
+    //}
+
+    protected void NavigatePrevious()
     {
-        NavManager.NavigateTo("charts2");
+        NavManager.NavigateTo("charts");
     }
 
 
