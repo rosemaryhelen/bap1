@@ -969,11 +969,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Student\\source\\repos\\BAP Team 03\\bap1\\BapBlazor.csproj",
+      "projectUniqueName": "C:\\Users\\Student\\source\\repos\\New Team Repo\\BapBlazor.csproj",
       "projectName": "BapBlazor",
-      "projectPath": "C:\\Users\\Student\\source\\repos\\BAP Team 03\\bap1\\BapBlazor.csproj",
+      "projectPath": "C:\\Users\\Student\\source\\repos\\New Team Repo\\BapBlazor.csproj",
       "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Student\\source\\repos\\BAP Team 03\\bap1\\obj\\",
+      "outputPath": "C:\\Users\\Student\\source\\repos\\New Team Repo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
