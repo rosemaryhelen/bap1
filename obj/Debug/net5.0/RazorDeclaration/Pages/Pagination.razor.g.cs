@@ -13,98 +13,98 @@ namespace BapBlazor.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 2 "C:\Users\Student\Source\Repos\bap1\_Imports.razor"
+#line 2 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Student\Source\Repos\bap1\_Imports.razor"
+#line 3 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Student\Source\Repos\bap1\_Imports.razor"
+#line 4 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Student\Source\Repos\bap1\_Imports.razor"
+#line 5 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\Student\Source\Repos\bap1\_Imports.razor"
+#line 6 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Student\Source\Repos\bap1\_Imports.razor"
+#line 7 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\Student\Source\Repos\bap1\_Imports.razor"
+#line 8 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\Student\Source\Repos\bap1\_Imports.razor"
+#line 9 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
 using BapBlazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\Student\Source\Repos\bap1\_Imports.razor"
+#line 10 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
 using BapBlazor.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\Student\Source\Repos\bap1\_Imports.razor"
+#line 11 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
 using Syncfusion.Blazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\Student\Source\Repos\bap1\_Imports.razor"
+#line 12 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
 using Syncfusion.Blazor.Charts;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Student\Source\Repos\bap1\Pages\Pagination.razor"
+#line 2 "C:\Users\rhbog\source\repos\blazor2\bap1\Pages\Pagination.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\Student\Source\Repos\bap1\Pages\Pagination.razor"
+#line 6 "C:\Users\rhbog\source\repos\blazor2\bap1\Pages\Pagination.razor"
 using Newtonsoft.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Student\Source\Repos\bap1\Pages\Pagination.razor"
+#line 7 "C:\Users\rhbog\source\repos\blazor2\bap1\Pages\Pagination.razor"
 using Data;
 
 #line default
@@ -119,11 +119,11 @@ using Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 68 "C:\Users\Student\Source\Repos\bap1\Pages\Pagination.razor"
+#line 69 "C:\Users\rhbog\source\repos\blazor2\bap1\Pages\Pagination.razor"
        
 
-        string responseBody = "";
-        List<StoreApp> StoreApps = new List<StoreApp>();
+    string responseBody = "";
+    List<StoreApp> StoreApps = new List<StoreApp>();
 
     protected override async Task OnInitializedAsync()
     {
@@ -139,7 +139,8 @@ using Data;
 
     }
 
-    //Declare Variables
+    //Declare Variables - how many results to show on each page, how many pages to show. 
+    //Attempted to show the exact number of pages needed to display results (5,321 entries in database / 25 results per page) 
 
     private int pageStart = 0;
     private int pageEnd = 25;
@@ -153,14 +154,15 @@ using Data;
         {
             pageStart += pageSize;
             pageEnd += pageSize;
-        }//if
+        }//if statement to prevent previous page button working when there is no results to show - not working 
         else
         {
             Console.WriteLine("You have reached the end of the dataset");
         }//else
+
     }//Next()
 
-    //Method to return to previous page
+    //Method to return to previous page 
     private void Previous()
     {
         if (pageStart >= basePage)
@@ -168,11 +170,12 @@ using Data;
             pageStart -= pageSize;
             pageEnd -= pageSize;
 
-        }//if
+        }
+        //if statement to prevent next page button working when there is no results to show - not working 
         else
-            {
-                Console.WriteLine("You have reached the end of the dataset");
-            }
+        {
+            Console.WriteLine("You have reached the end of the dataset");
+        }
     }//Previous()
 
 

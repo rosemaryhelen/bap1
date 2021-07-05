@@ -8,11 +8,11 @@
 
 <h1>Pagination</h1>
 
-<p>This component demonstrates pagination of the databaset.</p>
+<p>This component demonstrates pagination of the dataset.</p>
 
 
-
-<button class="btn btn-primary" @onclick="Previous"> Previous </button> &nbsp; <button class="btn btn-primary" @onclick="Next"> Next </button>
+@* Next and Previous buttons to navigate through the table  *@
+<button class="btn btn-primary" @onclick="Previous"> Previous </button> &nbsp; <button class="btn btn-primary" @onclick="Next"> Next </button> 
 
 <div class="container-fluid">
 
@@ -21,16 +21,17 @@
     </div>
 
     <div class="row" style="margin:25px;">
-        @if (StoreApps == null)
+        @if (StoreApps == null) // If statement to show an error message if the dataset isn't available, and what to show in the table if the dataset is available. 
         {
-            <p><em>FAILURE</em></p>
+            <p><em>FAILURE</em></p>  
         }
         else
         {
-            <table class="table table-bordered table-striped">
+            <table class="table table-bordered table-striped"> @* Table to present the dataset *@
                 <thead class="thead-dark">
                     <tr>
-                        <th>Id</th>
+                        @*These titles were taken from the SQL database *@
+                        <th>Id</th> 
                         <th>Name</th>
                         <th>Rating</th>
                         <th>People</th>
@@ -67,8 +68,8 @@
 
 @code {
 
-        string responseBody = "";
-        List<StoreApp> StoreApps = new List<StoreApp>();
+    string responseBody = "";
+    List<StoreApp> StoreApps = new List<StoreApp>();
 
     protected override async Task OnInitializedAsync()
     {
@@ -84,7 +85,8 @@
 
     }
 
-    //Declare Variables
+    //Declare Variables - how many results to show on each page, how many pages to show. 
+    //Attempted to show the exact number of pages needed to display results (5,321 entries in database / 25 results per page) 
 
     private int pageStart = 0;
     private int pageEnd = 25;
@@ -98,14 +100,15 @@
         {
             pageStart += pageSize;
             pageEnd += pageSize;
-        }//if
+        }//if statement to prevent previous page button working when there is no results to show - not working 
         else
         {
             Console.WriteLine("You have reached the end of the dataset");
         }//else
+
     }//Next()
 
-    //Method to return to previous page
+    //Method to return to previous page 
     private void Previous()
     {
         if (pageStart >= basePage)
@@ -113,11 +116,12 @@
             pageStart -= pageSize;
             pageEnd -= pageSize;
 
-        }//if
+        }
+        //if statement to prevent next page button working when there is no results to show - not working 
         else
-            {
-                Console.WriteLine("You have reached the end of the dataset");
-            }
+        {
+            Console.WriteLine("You have reached the end of the dataset");
+        }
     }//Previous()
 
 }
