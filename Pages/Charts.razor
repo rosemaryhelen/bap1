@@ -8,10 +8,11 @@
 @using Newtonsoft.Json 
  
 
-
+@* Injecting HttpClient to link BapAPI and Navigation Manager to navigate through Blazor app *@
 @inject HttpClient client
 @inject NavigationManager NavManager
 
+@* Div containers to show Title of page and Chart number*@
 <div class="row justify-content-center">
 <h1>Charts Showing Data Analysis Trends</h1>
 </div>
@@ -20,8 +21,7 @@
 <h2>Chart Number 1</h2>
 </div>
  
-
-
+@* Syncfusion.Blazor Display Chart *@
 <SfChart Title="Chart showing Number of Downloads in First 10 Apps">
     
     <ChartPrimaryXAxis Title="Category" ValueType="Syncfusion.Blazor.Charts.ValueType.Category" Maximum="10" Minimum="1" Interval="1"/>
@@ -34,14 +34,16 @@
     </ChartSeriesCollection>
 </SfChart>
 
+@* Navigation Button to move forward to Chart2.razor *@
+<div class="row justify-content-center">
 <button type="button" class="btn btn-primary" @onclick="@Navigate">Next Chart</button>
-
+</div>
 
 
 
 @code {
 
-
+    // Fetching Dataset from BapAPI
     string responseBody = "";
     List<StoreApp> StoreApps = new List<StoreApp>();
 
@@ -59,6 +61,7 @@
 
     }
 
+    //Navigate method to move forward
     protected void Navigate()
     {
         NavManager.NavigateTo("charts2");
