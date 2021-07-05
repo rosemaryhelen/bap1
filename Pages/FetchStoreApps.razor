@@ -8,15 +8,18 @@
 @using Newtonsoft.Json
 @using Data 
 
-<div class="container-fluid" style="background-color:cornsilk">
+@*Page background styling*@
+<div class="container-fluid" style="background-color:ivory">
 
+    @*Header styling*@
     <div class="row justify-content-center" style="margin-bottom:50px">
-        <h3 class="text-center" style="color:cornflowerblue">Microsoft Store Apps:<br />App Data</h3>
+        <h1 class="text-center" style="color:cadetblue">Microsoft Store Apps:<br />First Ten Records</h1>
        
     </div>
 
     <div class="row" style="margin:25px;">
 
+        @*If statement to check if data is null & if not null, populate the table*@
         @if (StoreApps != null)
         {
             <table class="table table-bordered table-striped">
@@ -49,6 +52,7 @@
                 </tbody>
             </table>
         }
+        @*If data is null show 'no records to show'*@
        @if (!StoreApps.Any())
         {
             <div class="justify-content-center">
@@ -61,6 +65,7 @@
 
 @code {
 
+    //Fetching and returning the first 10 records
     string responseBody = "";
     List<StoreApp> StoreApps = new List<StoreApp>();
 

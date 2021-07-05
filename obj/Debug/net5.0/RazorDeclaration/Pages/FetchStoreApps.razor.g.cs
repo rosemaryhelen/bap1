@@ -119,9 +119,10 @@ using Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 62 "C:\Users\Student\Source\Repos\bap1\Pages\FetchStoreApps.razor"
+#line 66 "C:\Users\Student\Source\Repos\bap1\Pages\FetchStoreApps.razor"
        
 
+    //Fetching and returning the first 10 records
     string responseBody = "";
     List<StoreApp> StoreApps = new List<StoreApp>();
 
