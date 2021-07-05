@@ -6,6 +6,8 @@
 @using Newtonsoft.Json
 @using Data
 
+
+
 <h1 class="text-center" >Store Apps Sort</h1>
 
     <p class = "text-center"><em> This page allows for the sorting of the store apps data by property in ascending and descending order</em></p>
@@ -18,38 +20,40 @@
 
     <div class="row" style="margin:25px;">
 
+        @*checking if the data is null or not*@
         @if (StoreApps != null)
         {
+            @*Creating the table and linked headers to allow for the sorting of the data via defined methods*@
             <table class="table table-bordered table-striped">
                 <thead class="thead-dark">
                     <tr>
                         <th>
-                            <a style="color:azure" href="javascript://" @onclick="@SortTableByIdAsc">Id Ascending ||</a>
-                            <a style="color:azure" href="javascript://" @onclick="@SortTableByIdDesc">Id Descending</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByIdAsc">Id Asc ||</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByIdDesc">Id Desc</a>
                         </th>
                         <th>
-                            <a style="color:azure" href="javascript://" @onclick="@SortTableByNameAsc">Name Ascending || </a>
-                            <a style="color:azure" href="javascript://" @onclick="@SortTableByNameDesc">Name Descending</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByNameAsc">Name Asc || </a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByNameDesc">Name Desc</a>
                         </th>
                         <th>
-                            <a style="color:azure" href="javascript://" @onclick="@SortTableByRatingAsc">Rating Ascending || </a>
-                            <a style="color:azure" href="javascript://" @onclick="@SortTableByRatingDesc">Rating Descending</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByRatingAsc">Rating Asc || </a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByRatingDesc">Rating Desc</a>
                         </th>
                         <th>
-                            <a style="color:azure" href="javascript://" @onclick="@SortTableByPeopleAsc">People Ascending || </a>
-                            <a style="color:azure" href="javascript://" @onclick="@SortTableByPeopleDesc">People Descending</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByPeopleAsc">People Asc || </a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByPeopleDesc">People Desc</a>
                         </th>
                         <th>
-                            <a style="color:azure" href="javascript://" @onclick="@SortTableByCategoryAsc">Category Ascending || </a>
-                            <a style="color:azure" href="javascript://" @onclick="@SortTableByCategoryDesc">Category Descending</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByCategoryAsc">Category Asc || </a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByCategoryDesc">Category Desc</a>
                         </th>
                         <th>
-                            <a style="color:azure" href="javascript://" @onclick="@SortTableByDateAsc">Date Ascending ||</a>
-                            <a style="color:azure" href="javascript://" @onclick="@SortTableByDateDesc">Date Descending</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByDateAsc">Date Asc ||</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByDateDesc">Date Desc</a>
                         </th>
                         <th>
-                            <a style="color:azure" href="javascript://" @onclick="@SortTableByPriceAsc">Price Ascending ||</a>
-                            <a style="color:azure" href="javascript://" @onclick="@SortTableByPriceDesc">Price Descending</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByPriceAsc">Price Asc ||</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByPriceDesc">Price Desc</a>
                         </th>
                     </tr>
                 </thead>
@@ -66,7 +70,7 @@
                             <td>@storeapp.Price</td>
 
                         </tr>
-                    }
+                    }@*for each*@
                 </tbody>
             </table>
         }
@@ -75,7 +79,7 @@
             <div class="justify-content-center">
                 <h5>No records to show</h5>
             </div>
-        }
+        }@*if statement*@
     </div>
 
 </div>
@@ -101,7 +105,9 @@
 
     }
 
-    //methods to sort by app ID number in both ascending and descending order
+    //Methods to sort the data in ascending or descending order as called in the table above
+
+    //Sort by Id - ascending and descending order
     public void SortTableByIdAsc()
     {
 
@@ -113,7 +119,7 @@
         StoreApps.Sort((x, y) => y.Id.CompareTo(x.Id));
 
 
-        //methods to sort by app Name in both ascending and descending order
+    //Sort by name - ascending and descending order
     }
     public void SortTableByNameAsc()
     {
@@ -126,7 +132,7 @@
         StoreApps.Sort((x, y) => y.Name.CompareTo(x.Name));
     }
 
-    //methods to sort by Rating in both ascending and descending order
+    //Sort by Rating - ascending and descending order
     public void SortTableByRatingAsc()
     {
         StoreApps.Sort((x, y) => x.Rating.CompareTo(y.Rating));
@@ -138,7 +144,7 @@
         StoreApps.Sort((x, y) => y.Rating.CompareTo(x.Rating));
     }
 
-    //methods to sort by amount of People that rated in both ascending and descending order
+    //Sort by People - ascending and descending order
     public void SortTableByPeopleAsc()
     {
         StoreApps.Sort((x, y) => x.People.CompareTo(y.People));
@@ -150,7 +156,7 @@
         StoreApps.Sort((x, y) => y.People.CompareTo(x.People));
     }
 
-    //methods to sort by app Category in both ascending and descending order
+    //Sort by Category - ascending and descending order
     public void SortTableByCategoryAsc()
     {
         StoreApps.Sort((x, y) => x.Category.CompareTo(y.Category));
@@ -162,7 +168,7 @@
         StoreApps.Sort((x, y) => y.Category.CompareTo(x.Category));
     }
 
-    //methods to sort by Date app was registered in both ascending and descending order
+    //Sort by Date - ascending and descending order
     public void SortTableByDateAsc()
     {
         StoreApps.Sort((x, y) => x.Date.CompareTo(y.Date));
@@ -174,7 +180,7 @@
         StoreApps.Sort((x, y) => y.Date.CompareTo(x.Date));
     }
 
-    //methods to sort by Price of each app in both ascending and descending order
+    //Sort by Price - ascending and descending order
     public void SortTableByPriceAsc()
     {
         StoreApps.Sort((x, y) => x.Price.CompareTo(y.Price));
