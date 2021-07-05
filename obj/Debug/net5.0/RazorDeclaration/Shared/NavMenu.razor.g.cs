@@ -104,7 +104,7 @@ using Syncfusion.Blazor.Charts;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 55 "C:\Users\Student\source\repos\New Team Repo\Shared\NavMenu.razor"
+#line 65 "C:\Users\Student\source\repos\New Team Repo\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
