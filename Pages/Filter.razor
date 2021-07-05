@@ -13,7 +13,7 @@
 <div class="container-fluid">
 
     <div class="row justify-content-center" style="margin-bottom:50px">
-        <h3 class="text-center">Store Apps - Sorted by Value</h3>
+        <h3 class="text-center">Store Apps - Filter</h3>
     </div>
 
     <div class="row" style="margin:25px;">
@@ -37,8 +37,8 @@
                         </th>
                         <th>
                             Category
-                            <form>
-                                <select name="dropdown" @onsubmit="@HandleSubmit">
+                            <EditForm Model="@categoryModel">
+                                <select Id="CategoryList" class="form-control" @bind=@categoryModel.CategoryName>
                                     <option value=”Select”>Filter</option>
                                     <option value=”Books”>Books</option>
                                     <option value=”Business”>Business</option>
@@ -54,8 +54,12 @@
                                     <option value=”News&Weather”>News And Weather</option>
                                     <option value=”Social”>Social</option>
                                 </select>
-                                <button type="submit" @onclick="@EnterUserInput">Filter</button>
-                            </form>
+
+                                <button type="submit" @onclick="@EnterUserInput">Search</button>
+
+                                <p>Selected category is: @categoryModel.CategoryName</p>
+
+                            </EditForm>
                         </th>
                         <th>
                             Date
@@ -82,48 +86,46 @@
                 </tbody>
             </table>
         }
-        @if (!StoreApps.Any())
-        {
-            <div class="justify-content-center">
-                <h5>No records to show</h5>
-            </div>
-        }
+        @*@if (!StoreApps.Any())
+            {
+                <div class="justify-content-center">
+                    <h5>No records to show</h5>
+                </div>
+            }*@
     </div>
 
 </div>
 
 @code {
-        public CategoryModel categoryModel = new();
-        List<StoreApp> StoreApps = new List<StoreApp>();
+    public CategoryModel categoryModel = new();
+    public List<StoreApp> StoreApps = new List<StoreApp>();
 
-        private void HandleSubmit()
+    private async void EnterUserInput()
+    {
+        await GetFilter(categoryModel.CategoryName);
+    }
+
+    string responseBody = "";
+
+    //api/StoreApps/category/Business
+
+    public async Task GetFilter(string selection)
+    {
+
+        var apiName = "api/StoreApps/category/" + selection.Substring(1, selection.Length - 2);
+        //apiName += selection;
+        //apiName += selection.Trim('"');
+
+        Logger.LogInformation(apiName);
+        var httpResponse = await client.GetAsync(apiName);
+
+        if (httpResponse.IsSuccessStatusCode)
         {
-            Logger.LogInformation("HandleSubmit called");
-            Logger.LogInformation(categoryModel.CategoryName);
-
+            responseBody = await httpResponse.Content.ReadAsStringAsync();
+            StoreApps = JsonConvert.DeserializeObject<List<StoreApp>>(responseBody);
+            StateHasChanged();
         }
 
-        private async void EnterUserInput()
-        {
-            await GetFilter();
-        } 
-
-        string responseBody = "";
-
-        public async Task GetFilter()
-        {
-
-            var apiName = "api/StoreApps/category";
-            apiName += categoryModel.CategoryName;
-            var httpResponse = await client.GetAsync(apiName);
-
-            if (httpResponse.IsSuccessStatusCode)
-            {
-                responseBody = await httpResponse.Content.ReadAsStringAsync();
-                StoreApps = JsonConvert.DeserializeObject<List<StoreApp>>(responseBody);
-                StateHasChanged();
-            }
-
-        }
+    }
 
 }
