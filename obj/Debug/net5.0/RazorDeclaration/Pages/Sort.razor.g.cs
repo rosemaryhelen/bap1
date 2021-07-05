@@ -119,7 +119,7 @@ using Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 83 "C:\Users\Student\Source\Repos\bap1\Pages\Sort.razor"
+#line 87 "C:\Users\Student\Source\Repos\bap1\Pages\Sort.razor"
        
 
     string responseBody = "";
@@ -141,7 +141,9 @@ using Data;
 
     }
 
-    //methods to sort by app ID number in both ascending and descending order
+    //Methods to sort the data in ascending or descending order as called in the table above
+
+    //Sort by Id - ascending and descending order
     public void SortTableByIdAsc()
     {
 
@@ -153,7 +155,7 @@ using Data;
         StoreApps.Sort((x, y) => y.Id.CompareTo(x.Id));
 
 
-        //methods to sort by app Name in both ascending and descending order
+    //Sort by name - ascending and descending order
     }
     public void SortTableByNameAsc()
     {
@@ -166,7 +168,7 @@ using Data;
         StoreApps.Sort((x, y) => y.Name.CompareTo(x.Name));
     }
 
-    //methods to sort by Rating in both ascending and descending order
+    //Sort by Rating - ascending and descending order
     public void SortTableByRatingAsc()
     {
         StoreApps.Sort((x, y) => x.Rating.CompareTo(y.Rating));
@@ -178,7 +180,7 @@ using Data;
         StoreApps.Sort((x, y) => y.Rating.CompareTo(x.Rating));
     }
 
-    //methods to sort by amount of People that rated in both ascending and descending order
+    //Sort by People - ascending and descending order
     public void SortTableByPeopleAsc()
     {
         StoreApps.Sort((x, y) => x.People.CompareTo(y.People));
@@ -190,7 +192,7 @@ using Data;
         StoreApps.Sort((x, y) => y.People.CompareTo(x.People));
     }
 
-    //methods to sort by app Category in both ascending and descending order
+    //Sort by Category - ascending and descending order
     public void SortTableByCategoryAsc()
     {
         StoreApps.Sort((x, y) => x.Category.CompareTo(y.Category));
@@ -202,7 +204,7 @@ using Data;
         StoreApps.Sort((x, y) => y.Category.CompareTo(x.Category));
     }
 
-    //methods to sort by Date app was registered in both ascending and descending order
+    //Sort by Date - ascending and descending order
     public void SortTableByDateAsc()
     {
         StoreApps.Sort((x, y) => x.Date.CompareTo(y.Date));
@@ -214,7 +216,7 @@ using Data;
         StoreApps.Sort((x, y) => y.Date.CompareTo(x.Date));
     }
 
-    //methods to sort by Price of each app in both ascending and descending order
+    //Sort by Price - ascending and descending order
     public void SortTableByPriceAsc()
     {
         StoreApps.Sort((x, y) => x.Price.CompareTo(y.Price));
