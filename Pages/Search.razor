@@ -12,13 +12,15 @@
 <h1>Search</h1>
 
 <p>This component demonstrates searching the datasaset.</p>
-
+@*EditForm to manage user input - ensures validation rule and prompts user for input*@
 <EditForm Model="@searchModel" OnValidSubmit="@HandleValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
+    @*bind the value of input and set it as the searchModel Name*@
     <InputText id="name" @bind-Value="searchModel.Name" />
 
+    @*onclick of button execute EnterUserInput() method*@
     <button type="submit" @onclick="@EnterUserInput">Search</button>
 
 </EditForm>
@@ -77,10 +79,13 @@
 </div>
 
 @code {
+    //new instance of obj.
     public SearchModel searchModel = new();
-    public List<StoreApp> StoreApps { get; set; }
 
-    //if form entry is valid run this method
+    //new List 
+    public List<StoreApp> StoreApps = new List<StoreApp>();
+
+    //if form entry is valid as per validation rule, run this method.
     private void HandleValidSubmit()
     {
         Logger.LogInformation("HandleValidSubmit called");
@@ -88,26 +93,33 @@
 
     }
 
+    //method to call search method with user input as parameter
     private async void EnterUserInput()
     {
         await GetSearch(searchModel.Name);
     }
 
-
+    //use Http client to give API a GET request using the apiName to call correct HttpGet method
     string responseBody = "";
-    List<StoreApp> SearchResults = new List<StoreApp>();
 
+    //string search = searchModel.Name 
     public async Task GetSearch(string search)
     {
-        searchModel = new();
+        //apiName to be passed to in GET method
         var apiName = "api/StoreApps/";
+        //append search onto end of apiName. Target -> api/StoreApps/{search}
         apiName += search;
+        //use Http client to give API a GET request using the apiName to call correct HttpGet method 
         var httpResponse = await client.GetAsync(apiName);
 
+        //returns status 200
         if (httpResponse.IsSuccessStatusCode)
         {
+            //if status 200, read the content of the GET method and store as a string in responseBody
             responseBody = await httpResponse.Content.ReadAsStringAsync();
+            //populate the StoreApps list with the content of from the response body
             StoreApps = JsonConvert.DeserializeObject<List<StoreApp>>(responseBody);
+            //re-renders state so that another action can be performed
             StateHasChanged();
         }
 
