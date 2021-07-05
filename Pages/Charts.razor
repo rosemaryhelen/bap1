@@ -10,11 +10,14 @@
 
 @inject HttpClient client
 
-<SfChart>
+<SfChart Title="Number of app downloads in each category">
     
-    <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category" />
+    <ChartPrimaryXAxis Title="Category" ValueType="Syncfusion.Blazor.Charts.ValueType.Category" />
+    <ChartPrimaryYAxis Title="Number of People" />
     <ChartSeriesCollection>
-        <ChartSeries DataSource="@StoreApps" XName="Category" YName="People" Type="ChartSeriesType.Column" />
+        <ChartSeries DataSource="@StoreApps" XName="Category" YName="People" Type="ChartSeriesType.Column">
+        
+        </ChartSeries>
     </ChartSeriesCollection>
 </SfChart>
 
