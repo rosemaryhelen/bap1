@@ -23,8 +23,10 @@
 
 
 
-
-<button type="button" class="btn btn-primary" @onclick="@Navigate">Next Chart</button>
+<div class="justify-content-center">
+    <button type="button" class="btn btn-primary" @onclick="@NavigateNext">Next Chart</button>
+    <button type="button" class="btn btn-primary" @onclick="@NavigatePrevious">Previous Chart</button>
+</div>
 
 
 
@@ -49,9 +51,14 @@
 
     }
 
-    protected void Navigate()
+    protected void NavigateNext()
     {
-        NavManager.NavigateTo("chart2");
+        NavManager.NavigateTo("charts3");
+    }
+
+    protected void NavigatePrevious()
+    {
+        NavManager.NavigateTo("charts");
     }
 
 
