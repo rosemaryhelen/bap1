@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "u0sdbIq4hOLPbV4RXqyQFW9XzE+sdouf9Jx+GjW8pLADNmeRle/qsTcWZXcJvu1Atw0YD0Moea5ATjCdDEvtQw==",
+  "dgSpecHash": "492Hxmv6Zo0gSHk1iWcXEGNu34ct+toccwYmJqn5M//ep1E0tzs363EODrVmakLPkSPJf1K9rxJahEkmRjx5Xg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Student\\source\\repos\\New Team Repo\\BapBlazor.csproj",
+  "projectFilePath": "C:\\Users\\Student\\Source\\Repos\\bap1\\BapBlazor.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Student\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.0\\microsoft.aspnetcore.authorization.5.0.0.nupkg.sha512",
     "C:\\Users\\Student\\.nuget\\packages\\microsoft.aspnetcore.components\\5.0.0\\microsoft.aspnetcore.components.5.0.0.nupkg.sha512",
