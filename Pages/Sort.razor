@@ -28,32 +28,32 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>
-                            <a style="color:azure" href="javascript://" @onclick="@Id_SortAsc">Id Asc ||</a>
-                            <a style="color:azure" href="javascript://" @onclick="@Id_SortDesc">Id Desc</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByIdAsc">Id Asc ||</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByIdDesc">Id Desc</a>
                         </th>
                         <th>
-                            <a style="color:azure" href="javascript://" @onclick="@Name_SortAsc">Name Asc || </a>
-                            <a style="color:azure" href="javascript://" @onclick="@Name_SortDesc">Name Desc</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByNameAsc">Name Asc || </a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByNameDesc">Name Desc</a>
                         </th>
                         <th>
-                            <a style="color:azure" href="javascript://" @onclick="@Rating_SortAsc">Rating Asc || </a>
-                            <a style="color:azure" href="javascript://" @onclick="@Rating_SortDesc">Rating Desc</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByRatingAsc">Rating Asc || </a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByRatingDesc"></a>
                         </th>
                         <th>
-                            <a style="color:azure" href="javascript://" @onclick="@People_SortAsc">People Asc || </a>
-                            <a style="color:azure" href="javascript://" @onclick="@People_SortDesc">People Desc</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByPeopleAsc">People Asc || </a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByPeopleDesc">People Desc</a>
                         </th>
                         <th>
-                            <a style="color:azure" href="javascript://" @onclick="@Category_SortAsc">Category Asc || </a>
-                            <a style="color:azure" href="javascript://" @onclick="@Category_SortDesc">Category Desc</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByCategoryAsc">Category Asc || </a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByCategoryDesc">Category Desc</a>
                         </th>
                         <th>
-                            <a style="color:azure" href="javascript://" @onclick="@Date_SortAsc">Date Asc ||</a>
-                            <a style="color:azure" href="javascript://" @onclick="@Date_SortDesc">Date Desc</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByDateAsc">Date Asc ||</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByDateDesc">Date Desc</a>
                         </th>
                         <th>
-                            <a style="color:azure" href="javascript://" @onclick="@Price_SortAsc">Price Asc ||</a>
-                            <a style="color:azure" href="javascript://" @onclick="@Price_SortDesc">Price Desc</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByPriceAsc">Price Asc ||</a>
+                            <a style="color:azure" href="javascript://" @onclick="@SortTableByPriceDesc">Price Desc</a>
                         </th>
                     </tr>
                 </thead>
@@ -70,16 +70,17 @@
                             <td>@storeapp.Price</td>
 
                         </tr>
-                    }@*for each*@
+                    }
                 </tbody>
             </table>
         }
+        @*If data is null show 'no records to show'*@
         @if (!StoreApps.Any())
         {
             <div class="justify-content-center">
                 <h5>No records to show</h5>
             </div>
-        }@*if statement*@
+        }
     </div>
 
 </div>
@@ -105,106 +106,87 @@
 
     }
 
-    //Methods to sort the data in ascending or descending order as called in the table above
-    //Methods to sort properties in Ascending Order
+    //methods to sort the table by property in ascending and descending order
     //Id
-    public void Id_SortAsc()
+    public void SortTableByIdAsc()
     {
 
         StoreApps.Sort((x, y) => x.Id.CompareTo(y.Id));
     }
-
-    //Name
-    public void Name_SortAsc()
-    {
-        StoreApps.Sort((x, y) => x.Name.CompareTo(y.Name));
-
-    }
-
-    //Rating
-    public void Rating_SortAsc()
-    {
-        StoreApps.Sort((x, y) => x.Rating.CompareTo(y.Rating));
-
-    }
-
-    //People
-    public void People_SortAsc()
-    {
-        StoreApps.Sort((x, y) => x.People.CompareTo(y.People));
-
-    }
-
-    //Date
-    public void Date_SortAsc()
-    {
-        StoreApps.Sort((x, y) => x.Date.CompareTo(y.Date));
-
-    }
-
-    //Category
-    public void Category_SortAsc()
-    {
-        StoreApps.Sort((x, y) => x.Category.CompareTo(y.Category));
-
-    }
-
-    //Price
-    public void Price_SortAsc()
-    {
-        StoreApps.Sort((x, y) => x.Price.CompareTo(y.Price));
-
-    }
-
-    //Methods to sort properties in Descending Order
-    //Id
-    public void Id_SortDesc()
+    public void SortTableByIdDesc()
     {
 
         StoreApps.Sort((x, y) => y.Id.CompareTo(x.Id));
 
-    }
 
-    //Name 
-    public void Name_SortDesc()
+    //Name
+    }
+    public void SortTableByNameAsc()
+    {
+        StoreApps.Sort((x, y) => x.Name.CompareTo(y.Name));
+
+    }
+    public void SortTableByNameDesc()
     {
 
         StoreApps.Sort((x, y) => y.Name.CompareTo(x.Name));
     }
 
     //Rating
+    public void SortTableByRatingAsc()
+    {
+        StoreApps.Sort((x, y) => x.Rating.CompareTo(y.Rating));
 
-    public void Rating_SortDesc()
+    }
+    public void SortTableByRatingDesc()
     {
 
         StoreApps.Sort((x, y) => y.Rating.CompareTo(x.Rating));
     }
 
     //People
+    public void SortTableByPeopleAsc()
+    {
+        StoreApps.Sort((x, y) => x.People.CompareTo(y.People));
 
-    public void People_SortDesc()
+    }
+    public void SortTableByPeopleDesc()
     {
 
         StoreApps.Sort((x, y) => y.People.CompareTo(x.People));
     }
 
     //Category
+    public void SortTableByCategoryAsc()
+    {
+        StoreApps.Sort((x, y) => x.Category.CompareTo(y.Category));
 
-    public void Category_SortDesc()
+    }
+    public void SortTableByCategoryDesc()
     {
 
         StoreApps.Sort((x, y) => y.Category.CompareTo(x.Category));
     }
 
     //Date
-    public void Date_SortDesc()
+    public void SortTableByDateAsc()
+    {
+        StoreApps.Sort((x, y) => x.Date.CompareTo(y.Date));
+
+    }
+    public void SortTableByDateDesc()
     {
 
         StoreApps.Sort((x, y) => y.Date.CompareTo(x.Date));
     }
 
     //Price
-    public void Price_SortDesc()
+    public void SortTableByPriceAsc()
+    {
+        StoreApps.Sort((x, y) => x.Price.CompareTo(y.Price));
+
+    }
+    public void SortTableByPriceDesc()
     {
 
         StoreApps.Sort((x, y) => y.Price.CompareTo(x.Price));
