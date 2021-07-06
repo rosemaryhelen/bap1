@@ -13,98 +13,98 @@ namespace BapBlazor.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 2 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
+#line 2 "C:\Users\Student\source\repos\bap1\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
+#line 3 "C:\Users\Student\source\repos\bap1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
+#line 4 "C:\Users\Student\source\repos\bap1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
+#line 5 "C:\Users\Student\source\repos\bap1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
+#line 6 "C:\Users\Student\source\repos\bap1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
+#line 7 "C:\Users\Student\source\repos\bap1\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
+#line 8 "C:\Users\Student\source\repos\bap1\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
+#line 9 "C:\Users\Student\source\repos\bap1\_Imports.razor"
 using BapBlazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
+#line 10 "C:\Users\Student\source\repos\bap1\_Imports.razor"
 using BapBlazor.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
+#line 11 "C:\Users\Student\source\repos\bap1\_Imports.razor"
 using Syncfusion.Blazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\rhbog\source\repos\blazor2\bap1\_Imports.razor"
+#line 12 "C:\Users\Student\source\repos\bap1\_Imports.razor"
 using Syncfusion.Blazor.Charts;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\rhbog\source\repos\blazor2\bap1\Pages\Sort.razor"
+#line 2 "C:\Users\Student\source\repos\bap1\Pages\Sort.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\rhbog\source\repos\blazor2\bap1\Pages\Sort.razor"
+#line 6 "C:\Users\Student\source\repos\bap1\Pages\Sort.razor"
 using Newtonsoft.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\rhbog\source\repos\blazor2\bap1\Pages\Sort.razor"
+#line 7 "C:\Users\Student\source\repos\bap1\Pages\Sort.razor"
 using Data;
 
 #line default
@@ -119,7 +119,7 @@ using Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 83 "C:\Users\rhbog\source\repos\blazor2\bap1\Pages\Sort.razor"
+#line 87 "C:\Users\Student\source\repos\bap1\Pages\Sort.razor"
        
 
     string responseBody = "";
@@ -141,86 +141,106 @@ using Data;
 
     }
 
-    //methods to sort by app ID number in both ascending and descending order
-    public void SortTableByIdAsc()
+    //Methods to sort the data in ascending or descending order as called in the table above
+    //Methods to sort properties in Ascending Order
+    //Id
+    public void Id_SortAsc()
     {
 
         StoreApps.Sort((x, y) => x.Id.CompareTo(y.Id));
     }
-    public void SortTableByIdDesc()
-    {
 
-        StoreApps.Sort((x, y) => y.Id.CompareTo(x.Id));
-
-
-        //methods to sort by app Name in both ascending and descending order
-    }
-    public void SortTableByNameAsc()
+    //Name
+    public void Name_SortAsc()
     {
         StoreApps.Sort((x, y) => x.Name.CompareTo(y.Name));
 
     }
-    public void SortTableByNameDesc()
+
+    //Rating
+    public void Rating_SortAsc()
+    {
+        StoreApps.Sort((x, y) => x.Rating.CompareTo(y.Rating));
+
+    }
+
+    //People
+    public void People_SortAsc()
+    {
+        StoreApps.Sort((x, y) => x.People.CompareTo(y.People));
+
+    }
+
+    //Date
+    public void Date_SortAsc()
+    {
+        StoreApps.Sort((x, y) => x.Date.CompareTo(y.Date));
+
+    }
+
+    //Category
+    public void Category_SortAsc()
+    {
+        StoreApps.Sort((x, y) => x.Category.CompareTo(y.Category));
+
+    }
+
+    //Price
+    public void Price_SortAsc()
+    {
+        StoreApps.Sort((x, y) => x.Price.CompareTo(y.Price));
+
+    }
+
+    //Methods to sort properties in Descending Order
+    //Id
+    public void Id_SortDesc()
+    {
+
+        StoreApps.Sort((x, y) => y.Id.CompareTo(x.Id));
+
+    }
+
+    //Name 
+    public void Name_SortDesc()
     {
 
         StoreApps.Sort((x, y) => y.Name.CompareTo(x.Name));
     }
 
-    //methods to sort by Rating in both ascending and descending order
-    public void SortTableByRatingAsc()
-    {
-        StoreApps.Sort((x, y) => x.Rating.CompareTo(y.Rating));
+    //Rating
 
-    }
-    public void SortTableByRatingDesc()
+    public void Rating_SortDesc()
     {
 
         StoreApps.Sort((x, y) => y.Rating.CompareTo(x.Rating));
     }
 
-    //methods to sort by amount of People that rated in both ascending and descending order
-    public void SortTableByPeopleAsc()
-    {
-        StoreApps.Sort((x, y) => x.People.CompareTo(y.People));
+    //People
 
-    }
-    public void SortTableByPeopleDesc()
+    public void People_SortDesc()
     {
 
         StoreApps.Sort((x, y) => y.People.CompareTo(x.People));
     }
 
-    //methods to sort by app Category in both ascending and descending order
-    public void SortTableByCategoryAsc()
-    {
-        StoreApps.Sort((x, y) => x.Category.CompareTo(y.Category));
+    //Category
 
-    }
-    public void SortTableByCategoryDesc()
+    public void Category_SortDesc()
     {
 
         StoreApps.Sort((x, y) => y.Category.CompareTo(x.Category));
     }
 
-    //methods to sort by Date app was registered in both ascending and descending order
-    public void SortTableByDateAsc()
-    {
-        StoreApps.Sort((x, y) => x.Date.CompareTo(y.Date));
-
-    }
-    public void SortTableByDateDesc()
+    //Date
+    public void Date_SortDesc()
     {
 
         StoreApps.Sort((x, y) => y.Date.CompareTo(x.Date));
     }
 
-    //methods to sort by Price of each app in both ascending and descending order
-    public void SortTableByPriceAsc()
-    {
-        StoreApps.Sort((x, y) => x.Price.CompareTo(y.Price));
-
-    }
-    public void SortTableByPriceDesc()
+    //Price
+    public void Price_SortDesc()
     {
 
         StoreApps.Sort((x, y) => y.Price.CompareTo(x.Price));
